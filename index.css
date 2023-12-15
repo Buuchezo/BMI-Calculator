@@ -246,7 +246,13 @@ input[type="radio"] {
 .bmi-limitations .bmi__limitations--main {
   padding: 5rem 0;
 }
+.bmi__limitations--items-last {
+  margin-bottom: 8rem;
+}
 
 .hidden {
   opacity: 0;
+}
+
+@media screen and (min-width: 768px) {
 }
