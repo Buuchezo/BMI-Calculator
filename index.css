@@ -60,7 +60,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.2rem;
+  font-size: 1.9rem;
   color: var(--color-heading);
   white-space: wrap;
 }
@@ -109,7 +109,7 @@ fieldset {
   padding: 2rem;
 }
 input[type="radio"] {
-  margin: 0 3rem;
+  margin: 0 2rem;
   display: inline-block;
   position: relative;
   right: 30px;
@@ -117,7 +117,7 @@ input[type="radio"] {
   height: 3.5rem;
 }
 
-input[type="text"] {
+.input__metric input[type="text"] {
   display: block;
   margin: 0.8rem -0.1rem;
   width: 28rem;
@@ -125,17 +125,29 @@ input[type="text"] {
   border-radius: 10px;
   border: 1px solid var(--color-border);
 }
+.input__imperial input[type="text"] {
+  display: inline-block;
+  margin: 0.8rem 1rem;
+  width: 13rem;
+  height: 8vh;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+}
 
-.heightweight-label {
+.input__imperial .heightweight-label {
+  margin-right: 25rem;
+}
+.input__metric .heightweight-label {
   margin-right: 30rem;
 }
 
 .metricimperial-label {
   display: inline-block;
   position: relative;
-  right: 5rem;
+  right: 4.5rem;
   top: -1.4rem;
 }
+
 .heading__legend {
   font-size: 2.5rem;
   border: 0;
