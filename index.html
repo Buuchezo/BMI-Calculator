@@ -67,11 +67,11 @@
           <form action="submit">
             <fieldset>
               <legend> </legend>
-              <input type="radio" id="metric">
-              <label class="input__imperial metricimperial-label" for="metric"><h4>
+              <input class="metric" type="radio" id="metric">
+              <label class="input__imperial metric-label" for="metric"><h4>
                 Metric</h4></label>
-                <input type="radio" id="imperial">
-                <label class="input__imperial metricimperial-label"  for="imperial"><h4>Imperial
+                <input class="imperial" type="radio" id="imperial">
+                <label class="input__imperial imperial-label"  for="imperial"><h4>Imperial
               </h4></label><br>
               <label class="heightweight-label" for="height">Height</label>
               <input type="text" name="" id="height">
@@ -84,49 +84,65 @@
             </fieldset>
           </form>
           <div class="result">
-            <p class="result__heading">Your BMI is..</p>
-            <p class="result__text result__text--number"><strong>23.4</strong></p>
-          <!-- add score -->
-          <p class="result__text">Your BMI suggests you’re a healthy weight<!-- add classification -->. Your ideal weight is between <strong>63.3kgs - 85.2kgs</strong>.
-          . Your ideal weight is between 
-          <!-- add range -->.
+            <span class="result__items1">
+              <p class="result__heading">Your BMI is..</p>
+              <p class="result__text result__text--number"><strong>23.4</strong></p>
+                        <!-- add score -->
+            </span>
+          <span class="result__items2">
+            <p class="result__text">Your BMI suggests you’re a healthy weight<!-- add classification -->. Your ideal weight is between <strong>63.3kgs - 85.2kgs</strong>.
+            . Your ideal weight is between
+            <!-- add range -->.
+          </span>
         </p>
           </div>
         </div>
       </section>
       <section class="bmi-meaning">
-        <img class="main-img" src="images/image-man-eating.webp" alt="">
-      <h2 class="bmi-meaning   bmi__meaning--heading">What your BMI result means</h2> 
-      <p class="bmi__meaning--text">
-          A BMI range of 18.5 to
-          24.9 is considered a 'healthy weight.' Maintaining a healthy weight may
-          lower your chances of experiencing health issues later on, such as
-          obesity and type 2 diabetes. Aim for a nutritious diet with reduced fat
-          and sugar content, incorporating ample fruits and vegetables.
-          Additionally, strive for regular physical activity, ideally about 30
-          minutes daily for five days a week.
-        </p>
-        <img class="bmi-meaning  bmi__meaning--image" src="images/icon-eating.svg" alt="a meal icon">
-        <h3 class="bmi-meaning  bmi__meaning--heading">Healthy eating</h3>
-        <p class="bmi-meaning bmi__meaning--text
-">
-          Healthy eating promotes weight control, disease prevention, better
-          digestion, immunity, mental clarity, and mood.
-        </p>
-        <img class="bmi-meaning  bmi__meaning--image" src="images/icon-exercise.svg" alt="a dumbbell icon">
-        <h3 class="bmi-meaning bmi__meaning--heading">Regular exercise</h3>
-        <p class="bmi-meaning bmi__meaning--text
-">
-          Exercise improves fitness, aids weight control, elevates mood, and
-          reduces disease risk, fostering wellness and longevity.
-        </p>
-        <img class="bmi-meaning  bmi__meaning--image" src="images/icon-sleep.svg" alt=" moon icon">
-        <h3 class=" bmi-meaning bmi__meaning--heading">Adequate sleep</h3>
-        <p class=" bmi-meaning  bmi__meaning--text
-">
-          Sleep enhances mental clarity, emotional stability, and physical
-          wellness, promoting overall restoration and rejuvenation.
-        </p>
+        <div class="bmi__tablet">
+          <div class="bmi__tablet--item1"><img class="main-img" src="images/image-man-eating.webp" alt=""></div>
+                <div class="bmi__tablet--item2">
+                  <h2 class="bmi-meaning   bmi__meaning--heading">What your BMI result means</h2>
+                  <p class="bmi__meaning--text">
+                              A BMI range of 18.5 to
+                              24.9 is considered a 'healthy weight.' Maintaining a healthy weight may
+                              lower your chances of experiencing health issues later on, such as
+                              obesity and type 2 diabetes. Aim for a nutritious diet with reduced fat
+                              and sugar content, incorporating ample fruits and vegetables.
+                              Additionally, strive for regular physical activity, ideally about 30
+                              minutes daily for five days a week.
+                            </p>
+                </div>
+        </div>
+        <div class="bmi__meaning--tablet">
+          <div class="bmi__meaning--tablet-item1"><img class="bmi-meaning  bmi__meaning--image" src="images/icon-eating.svg" alt="a meal icon"></div>
+          <div class="bmi__meaning--tablet-item2">
+            <h3 class="bmi-meaning  bmi__meaning--heading">Healthy eating</h3>
+            <p class="bmi-meaning bmi__meaning--text
+            ">
+              Healthy eating promotes weight control, disease prevention, better
+              digestion, immunity, mental clarity, and mood.
+            </p>
+          </div>
+          <div class="bmi__meaning--tablet-item1"><img class="bmi-meaning  bmi__meaning--image" src="images/icon-exercise.svg" alt="a dumbbell icon"></div>
+          <div class="bmi__meaning--tablet-item2">
+            <h3 class="bmi-meaning bmi__meaning--heading">Regular exercise</h3>
+            <p class="bmi-meaning bmi__meaning--text
+            ">
+              Exercise improves fitness, aids weight control, elevates mood, and
+              reduces disease risk, fostering wellness and longevity.
+            </p>
+          </div>
+          <div class="bmi__meaning--tablet-item1"><img class="bmi-meaning  bmi__meaning--image" src="images/icon-sleep.svg" alt=" moon icon"></div>
+          <div class="bmi__meaning--tablet-item2">
+            <h3 class=" bmi-meaning bmi__meaning--heading">Adequate sleep</h3>
+            <p class=" bmi-meaning  bmi__meaning--text
+            ">
+              Sleep enhances mental clarity, emotional stability, and physical
+              wellness, promoting overall restoration and rejuvenation.
+            </p>
+          </div>
+        </div>
       </section>
       <section class="bmi-limitations">
         <h2 class="bmi-limitations bmi__limitations--main  bmi__limitations--heading">Limitations of BMI</h2>
