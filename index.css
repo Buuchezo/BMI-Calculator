@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+/*General Css*/
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --color-primary: #345ff6;
+  --color-heading: #253347;
+  --color-text: #5e6e85;
+  --color-border: #d8e2e7;
+  --color-secondary: #ffffff;
+}
