@@ -113,7 +113,7 @@ fieldset {
   width: 3.5rem;
   height: 3.5rem;
 }*/
-#metric {
+.input__imperial #metric {
   margin: 0 2rem;
   display: inline-block;
   position: relative;
@@ -121,11 +121,27 @@ fieldset {
   width: 3.5rem;
   height: 3.5rem;
 }
-#imperial {
+.input__imperial #imperial {
   margin: 0 2rem;
   display: inline-block;
   position: relative;
   right: 0.3rem;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.input__metric #metric {
+  margin: 0 2rem;
+  display: inline-block;
+  position: relative;
+  right: 5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.input__metric #imperial {
+  margin: 0 2rem;
+  display: inline-block;
+  position: relative;
+  right: 3rem;
   width: 3.5rem;
   height: 3.5rem;
 }
@@ -149,6 +165,9 @@ fieldset {
 
 .input__imperial .heightweight-label {
   margin-right: 25rem;
+  position: relative;
+  top: 0.5rem;
+  left: 10rem;
 }
 .input__metric .heightweight-label {
   margin-right: 30rem;
@@ -171,6 +190,18 @@ fieldset {
   position: relative;
   right: 2.6rem;
   top: -1.5rem;
+}
+.input__metric .imperial-label {
+  display: inline-block;
+  position: relative;
+  right: 4.5rem;
+  top: -1.2rem;
+}
+.input__metric .metric-label {
+  display: inline-block;
+  position: relative;
+  right: 6.6rem;
+  top: -1.2rem;
 }
 
 .heading__legend {
@@ -254,6 +285,7 @@ fieldset {
   width: 90%;
   border-radius: 10px;
   text-align: left;
+  box-shadow: 1px 1px 20px rgba(168, 168, 168, 0.5);
 }
 .bmi__limitations--image {
   width: 4rem;
@@ -318,10 +350,20 @@ fieldset {
   .input__imperial .heightweight-label {
     margin-right: 55rem;
   }
+  .input__metric .heightweight-label {
+    margin-right: 55rem;
+  }
 
   .input__imperial input[type="text"] {
     display: inline-block;
     width: 30rem;
+    height: 8vh;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+  }
+  .input__metric input[type="text"] {
+    display: inline-block;
+    width: 60rem;
     height: 8vh;
     border-radius: 10px;
     border: 1px solid var(--color-border);
@@ -404,7 +446,7 @@ fieldset {
     align-self: center;
   }
 
-  #metric {
+  .input__imperial #metric {
     margin: 0 20rem 0 0;
     display: inline-block;
     position: relative;
@@ -412,7 +454,23 @@ fieldset {
     width: 3.5rem;
     height: 3.5rem;
   }
-  #imperial {
+  .input__imperial #imperial {
+    margin: 0 20rem 0 0;
+    display: inline-block;
+    position: relative;
+    right: -1.7rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .input__metric #metric {
+    margin: 0 20rem 0 0;
+    display: inline-block;
+    position: relative;
+    right: 0.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .input__metric #imperial {
     margin: 0 20rem 0 0;
     display: inline-block;
     position: relative;
@@ -432,9 +490,36 @@ fieldset {
     right: 19rem;
     top: -1.2rem;
   }
+  .input__metric .imperial-label {
+    display: inline-block;
+    position: relative;
+    right: 17rem;
+    top: -1.2rem;
+  }
+  .input__metric .metric-label {
+    display: inline-block;
+    position: relative;
+    right: 19rem;
+    top: -1.2rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
+  .input__metric .heightweight-label {
+    top: 0.5rem;
+    position: relative;
+    margin-right: 70rem;
+  }
+  .input__metric input[type="text"] {
+    top: 0rem;
+    position: relative;
+    right: 1rem;
+    display: inline-block;
+    width: 75rem;
+    height: 8vh;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+  }
   .input__imperial .heightweight-label {
     top: 0.5rem;
     position: relative;
@@ -497,14 +582,57 @@ fieldset {
     border-radius: 10px;
     border: 1px solid var(--color-border);
   }
-  #metric {
+  .input__metric input[type="text"] {
+    top: -8rem;
+    position: relative;
+    right: 6rem;
+    display: inline-block;
+    width: 48rem;
+    height: 6vh;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+  }
+
+  .input__metric .heightweight-label {
+    top: -8rem;
+    position: relative;
+    margin-right: 55rem;
+  }
+  .input__metric #metric {
     display: inline-block;
     position: relative;
     right: 4rem;
     width: 2.5rem;
     height: 2.5rem;
   }
-  #imperial {
+  .input__metric #imperial {
+    /*margin: 0 -18rem 0 0;*/
+    display: inline-block;
+    position: relative;
+    right: 8rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .input__metric .imperial-label {
+    display: inline-block;
+    position: relative;
+    top: -8.4rem;
+    right: -3rem;
+  }
+  .input__metric .metric-label {
+    display: inline-block;
+    position: relative;
+    top: -0.5rem;
+    left: -23rem;
+  }
+  .input__imperial #metric {
+    display: inline-block;
+    position: relative;
+    right: 4rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .input__imperial #imperial {
     /*margin: 0 -18rem 0 0;*/
     display: inline-block;
     position: relative;
@@ -654,7 +782,7 @@ fieldset {
     grid-area: 3 / 1 / 4 / 2;
   }
   .bmi__limitations-float {
-    top: 205rem;
+    top: 225rem;
     padding-left: 6rem;
     position: absolute;
     width: 55rem;
