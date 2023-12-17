@@ -782,7 +782,7 @@ fieldset {
     grid-area: 3 / 1 / 4 / 2;
   }
   .bmi__limitations-float {
-    top: 225rem;
+    top: 205rem;
     padding-left: 6rem;
     position: absolute;
     width: 55rem;
@@ -799,5 +799,18 @@ fieldset {
 
   .bmi__tablet {
     margin: -30rem 0 -10rem 0;
+  }
+  .curved__line--left {
+    position: absolute;
+    top: 70rem;
+    right: 50rem;
+    z-index: 2;
+  }
+  .curved__line--right {
+    position: absolute;
+    position: absolute;
+    top: 240rem;
+    left: 40rem;
+    z-index: 99;
   }
 }
