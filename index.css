@@ -353,6 +353,11 @@ input:focus {
 .hidden {
   display: none;
 }
+@media (orientation: landscape) and (max-width: 827px) {
+  .hero {
+    height: 180vh;
+  }
+}
 @media screen and (min-width: 400px) {
   .input__imperial .heightweight-label {
     margin-right: 25rem;
@@ -506,7 +511,7 @@ input:focus {
   }
 
   .hero {
-    height: 90vh;
+    height: 100vh;
     box-shadow: 1px 1px 10px grey;
   }
   .input {
@@ -520,7 +525,7 @@ input:focus {
   }
   .bmi__tablet--item1 {
     width: 62%;
-    flex: 0 0 0 50%;
+
     margin-left: -10rem;
   }
   .bmi__tablet--item2 {
