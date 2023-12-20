@@ -9,44 +9,60 @@ const minimum = document.querySelector(".minimum--range");
 const maximum = document.querySelector(".maximum--range");
 const container = document.querySelector(".results");
 const height = document.getElementById("height");
+const weight = document.getElementById("weight");
 const feet = document.getElementById("feet");
+const inches = document.getElementById("inches");
+const stone = document.getElementById("stone");
+const lbs = document.getElementById("lbs");
 const resultNmb = document.querySelector(".results__text--number");
+const form = document.querySelector(".input-form");
 
 metric.checked = true;
 
+//helper functions
+
+// selecting the metric values/units
 metric.addEventListener("click", function (e) {
   metricForm.classList.remove("hidden");
   imperialForm.classList.add("hidden");
 });
+
+// selecting the imperial values/units
 imperial.addEventListener("click", function (e) {
   imperialForm.classList.remove("hidden");
   metricForm.classList.add("hidden");
 });
 
-const form = document.querySelector(".input-form");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
   if (metric.checked) {
+    //checking if the field has a value;
+
     data.height = +data.height;
     data.weight = +data.weight;
     data.BMI = data.weight / (data.height / 100) ** 2;
   }
   if (imperial.checked) {
+    //checking if the field has a value
+
     data.height = +data.feet * 12 + +data.inches;
     data.weight = +data.stone * 14 + +data.lbs;
     data.BMI = data.weight / (data.height / 100) ** 2;
   }
   data.minimumRange = 18.5 * (data.height / 100) ** 2;
   data.maximumRange = 24.9 * (data.height / 100) ** 2;
+
+  // calling the functions immediately the submit event is triggered
   renderBMI(data);
   findRange(data);
   findNormalBMIRange(data);
   clearInputs();
-  console.log(data);
 });
 
+//rendering the results of the calculation
 function renderBMI(data) {
   resultContainer.innerHTML = "";
   const html = `
@@ -58,6 +74,7 @@ function renderBMI(data) {
   resultContainer.insertAdjacentHTML("afterbegin", html);
 }
 
+// Rendering the range
 function findRange(data) {
   replaceText.innerHTML = "";
   if (data.BMI <= 18.5) {
@@ -80,11 +97,13 @@ function findRange(data) {
   } else return "";
 }
 
+//rendering/displaying the adviced health weights
 function findNormalBMIRange(data) {
   minimum.innerHTML = `${Math.round(data.minimumRange)}`;
   maximum.innerHTML = `${Math.round(data.maximumRange)}`;
 }
 
+//clearing the input
 function clearInputs() {
   document.getElementById("height").value = "";
   document.getElementById("weight").value = "";
@@ -96,12 +115,13 @@ function clearInputs() {
     container.style.background = "#345ff6";
   }, 4000);
 }
-
+//removing the
 function removeClass(e, elID) {
   e.preventDefault();
   resultNmb.innerHTML = "";
   document.getElementById(elID).classList.remove("hidden");
 }
 
-height.addEventListener("change", (e) => removeClass(e, "btn-metric"));
-feet.addEventListener("change", (e) => removeClass(e, "btn-imperial"));
+//Revealing the button after atleast one field has been entered
+weight.addEventListener("input", (e) => removeClass(e, "btn-metric"));
+lbs.addEventListener("input", (e) => removeClass(e, "btn-imperial"));
