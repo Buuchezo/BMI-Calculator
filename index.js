@@ -9,6 +9,7 @@ const minimum = document.querySelector(".minimum--range");
 const maximum = document.querySelector(".maximum--range");
 const container = document.querySelector(".results");
 const height = document.getElementById("height");
+const feet = document.getElementById("feet");
 const resultNmb = document.querySelector(".results__text--number");
 
 metric.checked = true;
@@ -96,7 +97,11 @@ function clearInputs() {
   }, 4000);
 }
 
-height.addEventListener("change", (e) => {
+function removeClass(e, elID) {
   e.preventDefault();
   resultNmb.innerHTML = "";
-});
+  document.getElementById(elID).classList.remove("hidden");
+}
+
+height.addEventListener("change", (e) => removeClass(e, "btn-metric"));
+feet.addEventListener("change", (e) => removeClass(e, "btn-imperial"));
