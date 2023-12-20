@@ -17,9 +17,9 @@
       rel="stylesheet"
     />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="index.css" />
     <script defer src="index.js"></script>
   </head>
@@ -28,8 +28,8 @@
       <div class="curved__line--left hidden">
         <img src="./images/curvedleft.svg" alt="" />
       </div>
-      <div class="curved__line--right hidden">  
-        <img src="./images/curvedright.svg" alt="" /> 
+      <div class="curved__line--right hidden">
+        <img src="./images/curvedright.svg" alt="" />
       </div>
       <section class="hero">
         <div class="bmi__hero-container">
@@ -49,56 +49,103 @@
               point to evaluate your overall health and well-being.
             </p>
           </div>
-          
-          <div class="bmi__hero-items2">
-            <div class="input input__metric">
-              <h2 class="heading__legend">Enter your details below </h2>
-              <form class="input-form" method="get">
-                <fieldset>
-                  <legend> </legend>
-                  <input name="meimp" value="1" class="metric" type="radio" id="metric">
-                  <label class="input__imperial metric-label" for="metric"><h4>
-                    Metric</h4></label>
-                    <input name="meimp" value="2" class="imperial" type="radio" id="imperial">
-                    <label class="input__imperial imperial-label"  for="imperial"><h4>Imperial
-                  </h4></label><br>
-                  <span class="metric__form">
-                    <label class="heightweight-label" for="height" >Height</label>
-                    <input type="number" name="height" id="height" placeholder="height" >
-                    <label class="heightweight-label" for="weight">Weight</label>
-                    <input type="number" name="weight" id="weight" placeholder="weight">
-                  
-                  </span>
-                  <span class="imperial__form hidden">
-                    <label class="heightweight-label" for="height">Height</label>
-                  <input type="number" name="feet" id="feet" placeholder="ft">
-                  <label  for="inches"></label>
-                  <input type="number" name="inches" id="inches" placeholder="inches">
-                  <label class="heightweight-label" for="weight">Weight</label>
-                  <input type="number" name="stone" id="stones" placeholder="st">
-                  <label for="lbs"></label>
-                  <input  type="number" name="lbs" id="lbs" placeholder="lbs">
-                  <input class="submitbtn hidden" type="submit">
-                  
-                  
-                  </span>
-              
-                </fieldset>
-              </form>
-              <div class="result">
-                <span class="result__items1">
-                  <p class="result__heading">Your BMI is..</p>
-                  <p class="result__text result__text--number"><strong>--</strong></p>
-                </span>
-              <span class="result__items2 ">
-                <p class="result__text">Your BMI suggests that <span class="range">---------------</span>. Your ideal weight should 
-                  be between <strong><span class="minimum--range">--</span>kgs - <span class="maximum--range">--</span>kgs</strong>.
-              </span>
-            </p>
+
+          <div class="input__container">
+            <h3 class="container__header">Enter your details</h3>
+            <form class="input-form" method="get">
+              <div class="radio__btn">
+                <div class="radio__btn--metric">
+                  <input name="metric" id="metric" type="radio" />
+                </div>
+                <div class="radio__btn--imperial">
+                  <input name="metric" id="imperial" type="radio" />
+                </div>
               </div>
+                        
+                         <div class="metric ">
+                <div class="joined ">
+                  <input
+                    id="height"
+                    placeholder="height"
+                    name="height"
+                    class="container__input"
+                    type="number"
+                  />
+                  <div id="solution"></div>
+                </div>
+                <div class="joined">
+                  <input
+                  id="weight"
+                  placeholder="weight"
+                  name="weight"
+                  class="container__input"
+                  type="number"
+                  />
+                  <input class=".input-form" id="btn" type="submit">
+                </div>
+              </div>
+              <div class="imperial hidden">
+                <div class="joined__imperial ">
+                  <input
+                    id="feet"
+                    placeholder="feet"
+                    name="feet"
+                    class="container__input"
+                    type="number"
+                  />
+                  <div id="solution__imperial"></div>
+              
+                  <input
+                    id="inches"
+                    placeholder="inches"
+                    name="inches"
+                    class="container__input"
+                    type="number"
+                  />
+                  <div id="solution"></div>
+                </div>
+                <div class="joined">
+                  <input
+                  id="stone"
+                  placeholder="st"
+                  name="stone"
+                  class="container__input"
+                  type="number"
+                  />
+                  <div id="solution"></div>
+              
+              
+                  <input
+                  id="lbs"
+                  placeholder="lbs"
+                  name="lbs"
+                  class="container__input"
+                  type="number"
+                  />
+                  <input class=".input-form"  id="btn" type="submit">
+                </div>
+              </div>
+              <div class="labels">
+                <label class="input__labels--height" for="height">Height</label>
+                <label class="input__labels--weight" for="weight">Weight</label>
+                <label class="input__labels--metric" for="metric">Metric</label>
+                <label class="input__labels--imperial" for="imperial">Imperial</label>
+              </div>
+            </form>
+      
+            <div class="results">
+              <div class="results__items1 ">
+                <p class="results__heading">Your BMI is..</p>
+                <p class="results__text results__text--number" id="text__number"><strong>23</strong></p>
+              </div>
+            <div class="results__items2 ">
+              <p class="results__text">Your BMI suggests that <span class="range">---------------</span>. Your ideal weight should 
+                be between <strong><span class="minimum--range">--</span>kgs - <span class="maximum--range">--</span>kgs</strong>.
+            </div>
+          </p>
             </div>
           </div>
-<!--
+          <!--
           <div class="bmi__hero-items2">
             <div class="input input__imperial">
               <h2 class="heading__legend">Enter your details below </h2>
@@ -137,7 +184,7 @@
         </div>
       </section>
       <section class="bmi-meaning">
-        <div class="bmi__tablet ">
+        <div class="bmi__tablet">
           <div class="bmi__tablet--item1">
             <img class="main-img" src="./images/image-man-eating.webp" alt="" />
           </div>
@@ -296,7 +343,6 @@
             </p>
           </div>
         </div>
-        <div id="turn">please turn your device</div>
       </section>
     </main>
   </body>

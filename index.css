@@ -71,7 +71,7 @@ label {
 .hero {
   background-color: var(--color-heading);
   position: relative;
-  height: 100vh;
+  height: 80vh;
   background: rgb(255, 255, 255);
   background: linear-gradient(
     135deg,
@@ -81,116 +81,11 @@ label {
   width: 100%;
   border-bottom-left-radius: 70% 60px;
   border-bottom-right-radius: 60% 70px;
-  margin-left: 1.8rem;
 }
 .logo {
   width: 4rem;
   margin-top: 3rem;
 }
-fieldset {
-  border: 0;
-  padding: 2rem;
-}
-
-.input__imperial #metric {
-  margin: 0 2rem;
-  display: inline-block;
-  position: relative;
-  right: 1rem;
-  width: 3.5rem;
-  height: 3.5rem;
-}
-.input__imperial #imperial {
-  margin: 0 2rem;
-  display: inline-block;
-  position: relative;
-  right: 0.3rem;
-  width: 3.5rem;
-  height: 3.5rem;
-}
-.input__metric #metric {
-  margin: 0 2rem;
-  display: inline-block;
-  position: relative;
-  right: 5rem;
-  width: 3.5rem;
-  height: 3.5rem;
-}
-.input__metric #imperial {
-  margin: 0 2rem;
-  display: inline-block;
-  position: relative;
-  right: 3rem;
-  width: 3.5rem;
-  height: 3.5rem;
-}
-.input {
-  background-color: var(--color-secondary);
-  margin: 0 2rem;
-  border-radius: 20px;
-  height: 72rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  box-shadow: 1px 1px 15px rgba(217, 227, 232, 0.6);
-}
-
-.imperial__form input[type="number"] {
-  display: inline-block;
-  position: relative;
-  right: 2rem;
-  margin-right: 2rem;
-  width: 14rem;
-  height: 8vh;
-  border-radius: 10px;
-  border: 1px solid var(--color-border);
-}
-
-.metric__form input[type="number"] {
-  display: inline-block;
-  margin-right: 6rem;
-  width: 28rem;
-  height: 8vh;
-  border-radius: 10px;
-  border: 1px solid var(--color-border);
-}
-
-.input__imperial .heightweight-label {
-  margin-right: 25rem;
-  position: relative;
-  top: 0.5rem;
-  left: 10rem;
-}
-.input__metric .heightweight-label {
-  margin-right: 30rem;
-}
-
-.input__imperial .imperial-label {
-  display: inline-block;
-  position: relative;
-  right: 2rem;
-  top: -1.5rem;
-}
-.input__imperial .metric-label {
-  display: inline-block;
-  position: relative;
-  right: 2.6rem;
-  top: -1.5rem;
-}
-.input__metric .imperial-label {
-  display: inline-block;
-  position: relative;
-  right: 4.5rem;
-  top: -1.2rem;
-}
-.input__metric .metric-label {
-  display: inline-block;
-  position: relative;
-  right: 6.6rem;
-  top: -1.2rem;
-}
-
 .heading__legend {
   font-size: 2.5rem;
   border: 0;
@@ -198,92 +93,215 @@ fieldset {
   padding: 0;
   text-align: center;
 }
+.joined {
+  border: 2px solid var(--color-border);
+  width: 25.6rem;
+  display: flex;
+  height: 3rem;
+  justify-content: space-between;
+  border-radius: 40px;
+  margin-bottom: 2.5rem;
+  background-color: white;
+}
+.joined__imperial {
+  border: 2px solid var(--color-border);
+  width: 25.6rem;
+  display: flex;
+  height: 3rem;
+  justify-content: space-between;
+  border-radius: 40px;
+  margin-bottom: 2.5rem;
+  background-color: white;
+}
+.joined:hover,
+.joined__imperial:hover {
+  border-color: #345ff6;
+  cursor: pointer;
+}
+#height {
+  outline: none;
+  border: none;
+  margin-left: -12;
+  width: 20rem;
+  border-radius: 40px;
+}
+#weight {
+  outline: none;
+  border: none;
+  margin-left: -12;
+  width: 20rem;
+  border-radius: 40px;
+}
+#feet,
+#inches,
+#stone,
+#lbs {
+  outline: none;
+  border: none;
+  width: 8rem;
+  border-radius: 40px;
+}
 
-.result {
+#btn {
+  border-radius: 5rem;
+  background-color: rgb(39, 145, 7);
+  color: white;
+  font-weight: 700;
+  height: 2.5rem;
+  margin-top: 0.2rem;
+  margin-right: 0.2rem;
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 6px rgba(121, 122, 122, 0.4);
+}
+#solution {
+  border-radius: 5rem;
+  background-color: white;
+  height: 2.5rem;
+  margin-top: 0.2rem;
+  margin-right: 0.2rem;
+  width: 10rem;
+}
+#solution__imperial {
+  width: 15rem;
+  margin-right: 0.2rem;
+}
+
+input {
+  padding-left: 1rem;
+}
+
+.input__container {
+  background-color: var(--color-secondary);
+  height: 46rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2rem;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(168, 168, 168, 0.5);
+}
+
+.results {
+  display: flex;
   background: rgb(52, 95, 246);
   background: linear-gradient(
     90deg,
     rgba(52, 95, 246, 1) 0%,
     rgba(88, 125, 255, 1) 100%
   );
-
-  display: inline-block;
-  width: 28rem;
-  height: 25rem;
-  align-self: center;
-  border-radius: 10px;
-  text-align: start;
-}
-
-.result__heading,
-.result__text {
+  width: 80%;
+  height: 40%;
+  border-radius: 2rem;
+  margin-top: -2rem;
+  flex-direction: column;
+  align-items: center;
   color: var(--color-secondary);
 }
-
-.result__heading {
-  padding: 2rem 2.5rem 0 2.5rem;
+.results__items1,
+.results__items2 {
+  padding: 0 2rem;
   margin: 0;
 }
-
-.result__text--number {
-  font-size: 4rem;
-  margin: 2rem 0;
-}
-
-input[type="number"] {
-  padding: 10px 15px;
-  box-sizing: border-box;
+.results__text--number {
   font-weight: 800;
-  color: var(--color-text);
-  font-size: 2rem;
-  background-color: rgba(215, 221, 255, 0.2);
-}
-input[type="radio"]:hover {
-  outline: none;
-  box-shadow: none;
-}
-input[type="radio"]:active {
-  outline: none;
-  box-shadow: none;
-}
-input[type="radio"]:focus {
-  outline: none;
-  box-shadow: none;
+  font-size: 3.6rem;
 }
 
-input:hover {
-  background-color: rgba(230, 227, 227, 0.2);
-  outline: 1.5px solid var(--color-primary);
-  cursor: pointer;
-  transform: scale(1.005);
+.results__items2 {
+  padding: 0 2rem;
 }
-input:active {
-  border: transparent;
+.results__text {
+  margin: 0.2rem;
+  padding: 0;
+  font-size: 1.2rem;
 }
-input:focus {
-  outline: 1.5px solid var(--color-primary);
-  box-shadow: 0 0 10px rgba(11, 91, 145, 0.3);
-  background-color: var(--color-secondary);
+.results__heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.results p {
+  color: var(--color-secondary);
+  margin: 1rem 0;
+}
+.results__text--number {
+  font-weight: 800;
+  font-size: 4.6rem;
+}
+#metric {
+  position: relative;
+  right: 11rem;
+  top: -1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+#imperial {
+  position: relative;
+  right: -1rem;
+  top: -4rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.input__labels {
+  font-weight: 800;
+}
+
+.input__labels--weight {
+  position: relative;
+  top: -8.5rem;
+  left: -6rem;
+}
+.input__labels--height {
+  position: relative;
+  top: -14.5rem;
+  left: -1.5rem;
+}
+.input__labels--metric {
+  position: relative;
+  top: -18.5rem;
+  left: -5.7rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+.input__labels--imperial {
+  position: relative;
+  top: -18.5rem;
+  left: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 800;
 }
 
 ::placeholder {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 900;
-  text-align: right;
-  padding: 2rem;
+  text-align: left;
+  padding-left: 0.2rem;
   opacity: 0.7;
   color: var(--color-primary);
 }
 
+input {
+  font-weight: 900;
+  color: var(--color-text);
+  font-size: 1.2rem;
+}
 /* BMI MEANING SECTION */
 
 .main-img {
   max-width: 100%;
-  margin: 42rem 0 5rem 2.5rem;
+  margin: 42rem 0 5rem 0;
 }
 
 .bmi-meaning {
   text-align: start;
+  margin: 0;
 }
 
 .bmi__meaning--text {
@@ -308,7 +326,6 @@ input:focus {
     rgba(244, 246, 252, 0.5) 0%,
     rgba(253, 249, 249, 0.3) 100%
   );
-  margin-left: 2.5rem;
 }
 
 .bmi__limitations--heading {
@@ -353,71 +370,6 @@ input:focus {
 .hidden {
   display: none;
 }
-@media (orientation: landscape) and (max-width: 827px) {
-  .hero {
-    height: 180vh;
-  }
-}
-@media screen and (min-width: 400px) {
-  .input__imperial .heightweight-label {
-    margin-right: 25rem;
-    position: relative;
-    top: 0.5rem;
-    left: 10rem;
-  }
-  .input__metric .heightweight-label {
-    margin-right: 25rem;
-  }
-  .input__metric .imperial-label {
-    display: inline-block;
-    position: relative;
-    right: 2.5rem;
-    top: -1.2rem;
-  }
-  .input__metric .metric-label {
-    display: inline-block;
-    position: relative;
-    right: 4.6rem;
-    top: -1.2rem;
-  }
-  .input__metric #metric {
-    margin: 0 2rem;
-    display: inline-block;
-    position: relative;
-    right: 3rem;
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-  .input__metric #imperial {
-    margin: 0 2rem;
-    display: inline-block;
-    position: relative;
-    right: 1rem;
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-  .imperial__form input[type="number"] {
-    display: inline-block;
-    position: relative;
-    right: -0.5rem;
-    margin-right: 1rem;
-    width: 14rem;
-    height: 8vh;
-    border-radius: 10px;
-    border: 1px solid var(--color-border);
-    margin-top: 0.8rem;
-  }
-
-  .metric__form input[type="number"] {
-    display: inline-block;
-    margin-right: 0.1rem;
-    width: 30rem;
-    height: 8vh;
-    border-radius: 10px;
-    border: 1px solid var(--color-border);
-    margin-top: 0.8rem;
-  }
-}
 
 @media screen and (min-width: 768px) {
   h1 {
@@ -448,202 +400,181 @@ input:focus {
     font-size: 1.8rem;
     margin: 0 0 3rem 0;
   }
-  label {
-    font-size: 1.4rem;
+  input {
+    font-weight: 900;
     color: var(--color-text);
+    font-size: 1.5rem;
+    padding-left: 1.5rem;
   }
 
-  .heading__legend {
-    font-size: 3rem;
-    text-align: left;
-    margin-left: 4rem;
-  }
-  .input__imperial .heightweight-label {
-    margin-right: 55rem;
-  }
-  .input__metric .heightweight-label {
-    margin-right: 55rem;
-  }
+  .hero {
+    height: 90vh;
+    box-shadow: 1px 1px 10px grey;
 
-  .imperial__form input[type="number"] {
-    margin-right: 1rem;
-
-    display: inline-block;
-    width: 30rem;
-    height: 8vh;
-    border-radius: 10px;
-    border: 1px solid var(--color-border);
+    .bmi__tablet {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .bmi__tablet--item1 {
+      width: 62%;
+      flex: 0 0 0 50%;
+      margin-left: -10rem;
+    }
+    .bmi__tablet--item2 {
+      width: 45%;
+      flex: 0 0 0 50%;
+      padding: 40rem 0 0 4rem;
+    }
+    .bmi__meaning--tablet {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 8rem;
+    }
+    .bmi__meaning--tablet-item1 {
+      width: 10%;
+    }
+    .bmi__meaning--tablet-item2 {
+      width: 85%;
+      margin-left: 2rem;
+    }
+    .bmi__limitations--container {
+      margin-top: 5rem;
+      display: grid;
+      grid-template-columns: auto auto;
+      margin-left: 4rem;
+      column-gap: 0.5rem;
+      row-gap: 5rem;
+    }
+    .bmi__limitations--items {
+      min-height: 27rem;
+      align-self: center;
+    }
   }
-
-  .metric__form input[type="number"] {
-    display: inline-block;
-    width: 62.8rem;
-    height: 8vh;
-    border-radius: 10px;
-    border: 1px solid var(--color-border);
-  }
-
-  .result {
-    justify-content: center;
-    align-items: center;
+  .input__container {
+    background-color: var(--color-secondary);
+    height: 60rem;
+    width: 60rem;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2rem;
+    justify-content: center;
+  }
+  .results {
+    display: flex;
     background: rgb(52, 95, 246);
     background: linear-gradient(
       90deg,
       rgba(52, 95, 246, 1) 0%,
       rgba(88, 125, 255, 1) 100%
     );
-    width: 63rem;
-    height: 18rem;
-    border-radius: 10px 100px 100px 10px;
-    text-align: start;
-  }
-
-  .result__items1 {
-    width: 30rem;
-    flex: 0 0 0 50%;
-  }
-  .result__items2 {
-    padding: 3rem 3rem 0 0;
-    width: 30rem;
-    flex: 0 0 0 50%;
-  }
-
-  .hero {
-    height: 100vh;
-    box-shadow: 1px 1px 10px grey;
-  }
-  .input {
-    height: 65rem;
-  }
-  .bmi__tablet {
-    justify-content: center;
+    width: 90%;
+    height: 27%;
+    border-radius: 0 100px 100px 0;
+    margin-top: -2rem;
+    flex-direction: row;
     align-items: center;
-    display: flex;
-    flex-wrap: wrap;
+    color: var(--color-secondary);
   }
-  .bmi__tablet--item1 {
-    width: 62%;
-
-    margin-left: -10rem;
+  .joined {
+    width: 45.8rem;
+    height: 4.3rem;
   }
-  .bmi__tablet--item2 {
-    width: 45%;
-    flex: 0 0 0 50%;
-    padding: 40rem 0 0 4rem;
+  .joined__imperial {
+    width: 45.8rem;
+    height: 4.3rem;
   }
-  .bmi__meaning--tablet {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 8rem;
+  #btn {
+    height: 4rem;
   }
-  .bmi__meaning--tablet-item1 {
-    width: 10%;
+  #metric {
+    position: relative;
+    right: 20rem;
+    top: 1.3rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
-  .bmi__meaning--tablet-item2 {
-    width: 85%;
-    margin-left: 2rem;
-  }
-  .bmi__limitations--container {
-    margin-top: 5rem;
-    display: grid;
-    grid-template-columns: auto auto;
-    margin-left: 4rem;
-    column-gap: 0.5rem;
-    row-gap: 5rem;
-  }
-  .bmi__limitations--items {
-    min-height: 27rem;
-    align-self: center;
-  }
-
-  .input__metric #metric {
-    margin: 0 20rem 0 0;
-    display: inline-block;
+  #imperial {
     position: relative;
     right: -1rem;
+    top: -2.8rem;
     width: 3.5rem;
     height: 3.5rem;
   }
-  .input__metric #imperial {
-    margin: 0 20rem 0 0;
-    display: inline-block;
+  .input__labels--weight {
     position: relative;
-    right: -1.7rem;
-    width: 3.5rem;
-    height: 3.5rem;
+    top: -9.8rem;
+    left: -15rem;
+    font-weight: 500;
   }
-  .input__imperial .imperial-label {
-    display: inline-block;
+  .input__labels--height {
     position: relative;
-    right: 17rem;
-    top: -1.2rem;
+    top: -16.8rem;
+    left: -10rem;
+    font-weight: 500;
   }
-  .input__imperial .metric-label {
-    display: inline-block;
+  .input__labels--metric {
     position: relative;
-    right: 19rem;
-    top: -1.2rem;
+    top: -20rem;
+    left: -13.7rem;
+    font-size: 1.8rem;
+    font-weight: 800;
   }
-  .input__metric .imperial-label {
-    display: inline-block;
+  .input__labels--imperial {
     position: relative;
-    right: 17rem;
-    top: -1.2rem;
-  }
-  .input__metric .metric-label {
-    display: inline-block;
-    position: relative;
-    right: 19rem;
-    top: -1.2rem;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .input__metric .heightweight-label {
-    top: 0.5rem;
-    position: relative;
-    margin-right: 62rem;
+    top: -20rem;
+    left: 1rem;
+    font-size: 1.8rem;
+    font-weight: 800;
   }
 
-  .imperial__form input[type="number"] {
-    margin-right: 1rem;
-
-    position: relative;
-    right: 1rem;
-    display: inline-block;
-    width: 31.5rem;
-    height: 6vh;
-    border-radius: 10px;
-    border: 1px solid var(--color-border);
+  .results__items1,
+  .results__items2 {
+    margin: 0;
+  }
+  .results__items1 {
+    padding: 5rem 0;
+    width: 40%;
   }
 
-  .metric__form input[type="number"] {
-    position: relative;
-    right: 1rem;
-    display: inline-block;
-    width: 65rem;
-    height: 6vh;
-    border-radius: 10px;
-    border: 1px solid var(--color-border);
+  .results__items2 {
+    padding: 0 2rem;
+    width: 40%;
   }
-  .input__imperial .heightweight-label {
-    top: 0.5rem;
-    position: relative;
-    margin-right: 70rem;
+  .results__items2 p {
+    font-size: 1.5rem;
   }
-  .input__imperial input[type="text"] {
-    top: 0rem;
-    position: relative;
-    right: 1rem;
-    display: inline-block;
-    width: 35rem;
-    height: 8vh;
-    border-radius: 10px;
-    border: 1px solid var(--color-border);
+  .results__text {
+    margin: 0.2rem;
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+  }
+
+  .results__heading {
+    font-size: 2rem;
+    margin: 1rem;
+    color: var(--color-secondary);
+    padding: 0;
+  }
+  .container__header {
+    margin-right: 25rem;
+  }
+  .results__text--number {
+    padding: 0 2rem;
+    font-weight: 800;
+    font-size: 5.6rem;
+  }
+  ::placeholder {
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-align: left;
+    padding-left: 0.2rem;
+    opacity: 0.7;
+    color: var(--color-primary);
   }
 }
 
@@ -671,118 +602,6 @@ input:focus {
     width: 50%;
   }
 
-  .input {
-    height: 52rem;
-    width: 52rem;
-    margin-top: 10rem;
-  }
-  .input__imperial .heightweight-label {
-    top: -8rem;
-    position: relative;
-    margin-right: 55rem;
-  }
-
-  .input__metric .heightweight-label {
-    top: -8rem;
-    position: relative;
-    margin-right: 55rem;
-  }
-  .input__metric #metric {
-    display: inline-block;
-    position: relative;
-    right: 4rem;
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-  .input__metric #imperial {
-    /*margin: 0 -18rem 0 0;*/
-    display: inline-block;
-    position: relative;
-    right: 8rem;
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-  .input__metric .imperial-label {
-    display: inline-block;
-    position: relative;
-    top: -8.4rem;
-    right: -3rem;
-  }
-  .input__metric .metric-label {
-    display: inline-block;
-    position: relative;
-    top: -0.5rem;
-    left: -23rem;
-  }
-  .input__imperial #metric {
-    display: inline-block;
-    position: relative;
-    right: 4rem;
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-  .input__imperial #imperial {
-    /*margin: 0 -18rem 0 0;*/
-    display: inline-block;
-    position: relative;
-    right: 8rem;
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-  .input__imperial .imperial-label {
-    display: inline-block;
-    position: relative;
-    top: -8.4rem;
-    right: -3rem;
-  }
-  .input__imperial .metric-label {
-    display: inline-block;
-    position: relative;
-    top: -0.5rem;
-    left: -23rem;
-  }
-  .result {
-    position: relative;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    background: rgb(52, 95, 246);
-    background: linear-gradient(
-      90deg,
-      rgba(52, 95, 246, 1) 0%,
-      rgba(88, 125, 255, 1) 100%
-    );
-    width: 48rem;
-    height: 12rem;
-    border-radius: 10px 100px 100px 10px;
-    text-align: start;
-    top: -8rem;
-  }
-
-  .result__items1 {
-    width: 15rem;
-    align-self: flex-start;
-  }
-  .result__items2 {
-    width: 29rem;
-    align-self: flex-end;
-    padding: 2.5rem 0;
-  }
-
-  .result__heading {
-    font-size: 1.6rem;
-  }
-
-  .result__text {
-    font-size: 1.5rem;
-  }
-
-  .result__text--number {
-    font-size: 4rem;
-    margin: 0.7rem;
-  }
-
   .bmi__hero-items1 {
     text-align: left;
   }
@@ -791,6 +610,39 @@ input:focus {
     position: relative;
     top: -8rem;
     width: 6rem;
+  }
+  .input__container {
+    background-color: var(--color-secondary);
+    height: 52rem;
+    width: 52rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2rem;
+    margin-top: 6rem;
+  }
+  .hero {
+    margin-bottom: 19rem;
+  }
+
+  .bmi__tablet--item2 {
+    margin: 0;
+  }
+  .bmi__tablet {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8rem;
+    gap: 30px;
+  }
+  .bmi__tablet--item1 {
+    margin-left: 2rem;
+    width: 40%;
+  }
+  .bmi__tablet--item2 {
+    margin-top: 26rem;
+    width: 40%;
   }
   .bmi__heading {
     padding: 0;
@@ -874,7 +726,7 @@ input:focus {
     grid-area: 3 / 1 / 4 / 2;
   }
   .bmi__limitations-float {
-    top: 205rem;
+    top: 195lirem;
     padding-left: 6rem;
     position: absolute;
     width: 55rem;
@@ -905,27 +757,5 @@ input:focus {
     top: 240rem;
     left: 40rem;
     z-index: -2;
-  }
-  .imperial__form input[type="number"] {
-    margin-right: 1rem;
-    top: -8rem;
-    position: relative;
-    right: 6rem;
-    display: inline-block;
-    width: 22.5rem;
-    height: 6vh;
-    border-radius: 10px;
-    border: 1px solid var(--color-border);
-  }
-
-  .metric__form input[type="number"] {
-    top: -8rem;
-    position: relative;
-    right: 6rem;
-    display: inline-block;
-    width: 48rem;
-    height: 6vh;
-    border-radius: 10px;
-    border: 1px solid var(--color-border);
   }
 }

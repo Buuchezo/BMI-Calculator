@@ -1,13 +1,15 @@
 "use strict";
 const metric = document.getElementById("metric");
 const imperial = document.getElementById("imperial");
-const metricForm = document.querySelector(".metric__form");
-const imperialForm = document.querySelector(".imperial__form");
-const resultContainer = document.querySelector(".result__items1");
+const metricForm = document.querySelector(".metric");
+const imperialForm = document.querySelector(".imperial");
+const resultContainer = document.querySelector(".results__items1");
 const replaceText = document.querySelector(".range");
 const minimum = document.querySelector(".minimum--range");
 const maximum = document.querySelector(".maximum--range");
-const container = document.querySelector(".result");
+const container = document.querySelector(".results");
+const height = document.getElementById("height");
+const resultNmb = document.querySelector(".results__text--number");
 
 metric.checked = true;
 
@@ -48,8 +50,8 @@ function renderBMI(data) {
   resultContainer.innerHTML = "";
   const html = `
                      <span class="result__items1">
-                     <p class="result__heading">Your BMI is..</p>
-                     <p class="result__text result__text--number"><strong>${Math.round(
+                     <p class="results__heading">Your BMI is..</p>
+                     <p class="results__text results__text--number"><strong>${Math.round(
                        data.BMI
                      )}</strong></p>  `;
   resultContainer.insertAdjacentHTML("afterbegin", html);
@@ -88,8 +90,13 @@ function clearInputs() {
   document.getElementById("inches").value = "";
   document.getElementById("feet").value = "";
   document.getElementById("lbs").value = "";
-  document.getElementById("stones").value = "";
+  document.getElementById("stone").value = "";
   setTimeout(() => {
     container.style.background = "#345ff6";
   }, 4000);
 }
+
+height.addEventListener("change", (e) => {
+  e.preventDefault();
+  resultNmb.innerHTML = "";
+});
