@@ -16,41 +16,51 @@ const stone = document.getElementById("stone");
 const lbs = document.getElementById("lbs");
 const resultNmb = document.querySelector(".results__text--number");
 const form = document.querySelector(".input-form");
+const radioBtns = document.querySelectorAll("input[type=radio]");
+const resultsContainer = document.querySelector(".results");
 
-metric.checked = true;
-
-//helper functions
-
-// selecting the metric values/units
-metric.addEventListener("click", function (e) {
-  metricForm.classList.remove("hidden");
-  imperialForm.classList.add("hidden");
-});
-
-// selecting the imperial values/units
-imperial.addEventListener("click", function (e) {
-  imperialForm.classList.remove("hidden");
-  metricForm.classList.add("hidden");
-});
+radioBtns.forEach((radioBtn) =>
+  radioBtn.addEventListener("click", function (e) {
+    if (e.target.id === "metric") {
+      metricForm.classList.remove("hidden");
+      imperialForm.classList.add("hidden");
+      document.querySelector(".input_metric").classList.remove("hidden");
+    } else if (e.target.id === "imperial") {
+      imperialForm.classList.remove("hidden");
+      metricForm.classList.add("hidden");
+    }
+  })
+);
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
+
   if (metric.checked) {
     //checking if the field has a value;
-
-    data.height = +data.height;
-    data.weight = +data.weight;
-    data.BMI = data.weight / (data.height / 100) ** 2;
-  }
-  if (imperial.checked) {
+    if (data.height === "" || data.weight === "") {
+      return alert("Please fill in all the fields");
+    } else {
+      data.height = +data.height;
+      data.weight = +data.weight;
+      data.BMI = data.weight / (data.height / 100) ** 2;
+    }
+  } else if (imperial.checked) {
     //checking if the field has a value
-
-    data.height = +data.feet * 12 + +data.inches;
-    data.weight = +data.stone * 14 + +data.lbs;
-    data.BMI = data.weight / (data.height / 100) ** 2;
+    if (
+      data.feet === "" ||
+      data.inches === "" ||
+      data.lbs === "" ||
+      data.stone === ""
+    )
+      return alert("Please fill in all the fields");
+    else {
+      data.height = +data.feet * 12 + +data.inches;
+      data.weight = +data.stone * 14 + +data.lbs;
+      data.BMI = data.weight / (data.height / 100) ** 2;
+    }
   }
   data.minimumRange = 18.5 * (data.height / 100) ** 2;
   data.maximumRange = 24.9 * (data.height / 100) ** 2;
@@ -115,13 +125,3 @@ function clearInputs() {
     container.style.background = "#345ff6";
   }, 4000);
 }
-//removing the
-function removeClass(e, elID) {
-  e.preventDefault();
-  resultNmb.innerHTML = "";
-  document.getElementById(elID).classList.remove("hidden");
-}
-
-//Revealing the button after atleast one field has been entered
-weight.addEventListener("input", (e) => removeClass(e, "btn-metric"));
-lbs.addEventListener("input", (e) => removeClass(e, "btn-imperial"));

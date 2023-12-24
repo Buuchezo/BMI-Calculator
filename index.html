@@ -55,16 +55,18 @@
             <form class="input-form" method="get">
               <div class="radio__btn">
                 <div class="radio__btn--metric">
-                  <input name="metric" id="metric" type="radio" />
+                  <input checked name="metric" id="metric" type="radio" />
                 </div>
                 <div class="radio__btn--imperial">
                   <input name="metric" id="imperial" type="radio" />
                 </div>
               </div>
                         
-                         <div class="metric ">
+              <div class="metric ">
                 <div class="joined ">
                   <input
+                  min="0"
+                  max="300"
                     id="height"
                     placeholder="height"
                     name="height"
@@ -75,27 +77,33 @@
                 </div>
                 <div class="joined">
                   <input
+                  min="0"
+                  max="727"
                   id="weight"
                   placeholder="weight"
                   name="weight"
                   class="container__input"
                   type="number"
                   />
-                  <input class=".input-form hidden" id="btn-metric" type="submit">
+                  <input class=".input-form input_metric" id="btn-metric" type="submit">
                 </div>
               </div>
               <div class="imperial hidden">
                 <div class="joined__imperial ">
                   <input
+                  min="0"
+                  max="9"
                     id="feet"
                     placeholder="feet"
                     name="feet"
                     class="container__input"
                     type="number"
                   />
-                  <div id="solution__imperial"></div>
+                  
               
                   <input
+                  min="0"
+                  max="99"
                     id="inches"
                     placeholder="inches"
                     name="inches"
@@ -106,23 +114,27 @@
                 </div>
                 <div class="joined">
                   <input
+                  min="0"
+                  max="102"
                   id="stone"
                   placeholder="st"
                   name="stone"
                   class="container__input"
                   type="number"
                   />
-                  <div id="solution"></div>
+                
               
               
                   <input
+                  min="0"
+                  max="99"
                   id="lbs"
                   placeholder="lbs"
                   name="lbs"
                   class="container__input"
                   type="number"
                   />
-                  <input class=".input-form hidden"  id="btn-imperial" type="submit">
+                  <input class=".input-form input_ imperial"  id="btn-imperial" type="submit">
                 </div>
               </div>
               <div class="labels">
@@ -136,7 +148,7 @@
             <div class="results">
               <div class="results__items1 ">
                 <p class="results__heading">Your BMI is..</p>
-                <p class="results__text results__text--number" id="text__number"><strong>23</strong></p>
+                <p class="results__text results__text--number" id="text__number"><strong>----</strong></p>
               </div>
             <div class="results__items2 ">
               <p class="results__text">Your BMI suggests that <span class="range">---------------</span>. Your ideal weight should 
@@ -203,12 +215,7 @@
             </p>
           </div>
         </div>
-        <div class="curved__line--left hidden">
-          <img src="./images/pattern-curved-line-left.svg" alt="" />
-        </div>
-        <div class="curved__line--right hidden">
-          <img src="./images/pattern-curved-line-.svg" alt="" />
-        </div>
+       
         <div class="bmi__meaning--tablet animate__animated animate__backInUp">
           <div class="bmi__meaning--grid-item1">
             <div class="bmi__meaning--tablet-item1">
