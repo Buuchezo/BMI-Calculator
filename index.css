@@ -143,20 +143,20 @@ label {
 }
 
 #btn-metric {
-  border-radius: 5rem;
-  background-color: rgb(39, 145, 7);
+  border-radius: 25rem;
+  background-color: transparent;
   color: white;
   font-weight: 700;
   height: 2.5rem;
+
   margin-top: 0.2rem;
   margin-right: 0.2rem;
   outline: none;
   border-color: transparent;
-  box-shadow: 0 0 6px rgba(121, 122, 122, 0.4);
 }
 #btn-imperial {
   border-radius: 5rem;
-  background-color: rgb(39, 145, 7);
+  background-color: transparent;
   color: white;
   font-weight: 700;
   height: 2.5rem;
@@ -164,7 +164,6 @@ label {
   margin-right: 0.2rem;
   outline: none;
   border-color: transparent;
-  box-shadow: 0 0 6px rgba(121, 122, 122, 0.4);
 }
 #solution {
   border-radius: 5rem;
@@ -507,6 +506,7 @@ input {
   #btn-imperial {
     height: 4rem;
   }
+
   #metric {
     position: relative;
     right: 20rem;

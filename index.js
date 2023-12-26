@@ -1,4 +1,5 @@
 "use strict";
+
 const metric = document.getElementById("metric");
 const imperial = document.getElementById("imperial");
 const metricForm = document.querySelector(".metric");
@@ -19,6 +20,8 @@ const form = document.querySelector(".input-form");
 const radioBtns = document.querySelectorAll("input[type=radio]");
 const resultsContainer = document.querySelector(".results");
 
+// selecting the radio button
+
 radioBtns.forEach((radioBtn) =>
   radioBtn.addEventListener("click", function (e) {
     if (e.target.id === "metric") {
@@ -31,7 +34,7 @@ radioBtns.forEach((radioBtn) =>
     }
   })
 );
-
+//Submitting the form
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -39,29 +42,30 @@ form.addEventListener("submit", function (e) {
   const data = Object.fromEntries(formData);
 
   if (metric.checked) {
-    //checking if the field has a value;
+    //checking if all the fields have values
     if (data.height === "" || data.weight === "") {
-      return alert("Please fill in all the fields");
+      return alert("Please fill out all the input fields");
     } else {
       data.height = +data.height;
       data.weight = +data.weight;
       data.BMI = data.weight / (data.height / 100) ** 2;
     }
   } else if (imperial.checked) {
-    //checking if the field has a value
+    //checking if all the fields have values
     if (
       data.feet === "" ||
       data.inches === "" ||
       data.lbs === "" ||
       data.stone === ""
-    )
-      return alert("Please fill in all the fields");
-    else {
+    ) {
+      return alert("Please fill out all the input fields");
+    } else {
       data.height = +data.feet * 30.48 + +data.inches * 2.54;
       data.weight = +data.stone * 6.35 + +data.lbs * 0.45;
       data.BMI = data.weight / (data.height / 100) ** 2;
     }
   }
+
   data.minimumRange = 18.5 * (data.height / 100) ** 2;
   data.maximumRange = 24.9 * (data.height / 100) ** 2;
 
@@ -70,6 +74,7 @@ form.addEventListener("submit", function (e) {
   findRange(data);
   findNormalBMIRange(data);
   clearInputs();
+
   console.log(data);
 });
 
@@ -85,7 +90,8 @@ function renderBMI(data) {
   resultContainer.insertAdjacentHTML("afterbegin", html);
 }
 
-// Rendering the range
+// Rendering the range with color
+
 function findRange(data) {
   replaceText.innerHTML = "";
   if (data.BMI <= 18.5) {
@@ -124,5 +130,12 @@ function clearInputs() {
   document.getElementById("stone").value = "";
   setTimeout(() => {
     container.style.background = "#345ff6";
+    //Replacing the text after the results are revealed
   }, 4000);
 }
+lbs.addEventListener("input", function (e) {
+  document.getElementById("btn-imperial").style.background = "rgb(39, 145, 7)";
+});
+weight.addEventListener("input", function (e) {
+  document.getElementById("btn-metric").style.background = "rgb(39, 145, 7)";
+});
