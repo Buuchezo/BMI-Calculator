@@ -275,19 +275,19 @@ input:active {
 .input__labels--height {
   position: relative;
   top: -14.5rem;
-  left: -1.5rem;
+  left: 1.5rem;
 }
 .input__labels--metric {
   position: relative;
   top: -18.5rem;
-  left: -5.7rem;
+  left: -9.7rem;
   font-size: 1.8rem;
   font-weight: 800;
 }
 .input__labels--imperial {
   position: relative;
   top: -18.5rem;
-  left: 0.5rem;
+  left: -3.5rem;
   font-size: 1.8rem;
   font-weight: 800;
 }
@@ -530,20 +530,20 @@ input {
   .input__labels--height {
     position: relative;
     top: -16.8rem;
-    left: -10rem;
+    left: -7rem;
     font-weight: 500;
   }
   .input__labels--metric {
     position: relative;
     top: -20rem;
-    left: -13.7rem;
+    left: -17.7rem;
     font-size: 1.8rem;
     font-weight: 800;
   }
   .input__labels--imperial {
     position: relative;
     top: -20rem;
-    left: 1rem;
+    left: -3rem;
     font-size: 1.8rem;
     font-weight: 800;
   }
