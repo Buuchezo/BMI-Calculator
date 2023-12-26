@@ -57,8 +57,8 @@ form.addEventListener("submit", function (e) {
     )
       return alert("Please fill in all the fields");
     else {
-      data.height = +data.feet * 12 + +data.inches;
-      data.weight = +data.stone * 14 + +data.lbs;
+      data.height = +data.feet * 30.48 + +data.inches * 2.54;
+      data.weight = +data.stone * 6.35 + +data.lbs * 0.45;
       data.BMI = data.weight / (data.height / 100) ** 2;
     }
   }
@@ -70,6 +70,7 @@ form.addEventListener("submit", function (e) {
   findRange(data);
   findNormalBMIRange(data);
   clearInputs();
+  console.log(data);
 });
 
 //rendering the results of the calculation
