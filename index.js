@@ -19,6 +19,8 @@ const resultNmb = document.querySelector(".results__text--number");
 const form = document.querySelector(".input-form");
 const radioBtns = document.querySelectorAll("input[type=radio]");
 const resultsContainer = document.querySelector(".results");
+const section1 = document.querySelector(".hero");
+const cookieBtn = document.querySelector(".cookie--btn");
 
 // selecting the radio button
 
@@ -138,4 +140,18 @@ lbs.addEventListener("input", function (e) {
 });
 weight.addEventListener("input", function (e) {
   document.getElementById("btn-metric").style.background = "rgb(39, 145, 7)";
+});
+//adding the cookie message dynamically
+const message = document.createElement("div");
+message.setAttribute("class", "cookie");
+message.innerHTML =
+  '<h5>We collect cookies</h5><p>Cookies help us deliver the best experience on our website. By using our website, you agree to the use of cookies. <a href="https://en.wikipedia.org/wiki/HTTP_cookie" target="_blank">Find out how we use cookies.</a></p><button class="cookie--btn">ACCEPT</button>';
+message.style.color = section1.append(message);
+
+//removing the cookie message
+section1.addEventListener("click", function (e) {
+  const click = e.target.closest(".cookie--btn");
+  if (!click) return;
+  //message.setAttribute("class", "hidden");
+  message.remove();
 });

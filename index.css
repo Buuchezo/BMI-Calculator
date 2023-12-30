@@ -67,6 +67,39 @@ label {
 }
 
 /* HERO */
+a {
+  color: var(--color-secondary);
+}
+
+.cookie {
+  position: absolute;
+  top: 105%;
+  height: 16vh;
+  width: 100vw;
+  background-color: #7b8197;
+  color: var(--color-secondary);
+  opacity: 0.9;
+}
+.cookie p {
+  color: var(--color-secondary);
+  font-size: 1rem;
+  padding-top: 0;
+}
+.cookie h5 {
+  font-size: 1.3rem;
+  padding-top: 0;
+}
+.cookie--btn {
+  color: var(--color-secondary);
+  background-color: green;
+  padding-top: 0;
+  position: relative;
+  top: -15%;
+  height: 3vh;
+  width: 10rem;
+  border: 1px solid white;
+  border-radius: 15px;
+}
 
 .hero {
   background-color: var(--color-heading);
@@ -420,7 +453,15 @@ input {
     font-size: 1.5rem;
     padding-left: 1.5rem;
   }
-
+  .cookie {
+    position: absolute;
+    top: 95%;
+    height: 16vh;
+    width: 100%;
+    background-color: #7b8197;
+    color: var(--color-secondary);
+    opacity: 0.9;
+  }
   .hero {
     height: 90vh;
     box-shadow: 1px 1px 10px grey;
